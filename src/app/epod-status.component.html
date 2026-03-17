@@ -1,0 +1,77 @@
+<div class="epod-container">
+  <div class="epod-header">
+    <h2 style="margin: 0; color: #1e293b;">ePOD <span style="color: #6366f1">Verification Hub</span></h2>
+    <div class="sync-tag">AUTO_SYNC: ACTIVE // {{systemTime}}</div>
+  </div>
+
+  <div class="status-grid">
+    <div class="epod-card" *ngFor="let item of deliveryData">
+      <div class="card-content">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+          <span class="id-tag">{{item.routeId}}</span>
+          <button *ngIf="item.status === 'Submitted'" (click)="openPOD(item)" class="view-pod-link">
+             View POD
+          </button>
+        </div>
+        
+        <div class="info-block">
+          <div class="info-item">
+            <span class="label">Customer</span> 
+            <span class="value">{{item.customer}}</span>
+          </div>
+          <div class="info-item">
+            <span class="label">Address</span> 
+            <span class="value truncate">{{item.address}}</span>
+          </div>
+        </div>
+
+        <div class="submission-status">
+          <span class="status-circle" [ngClass]="item.status === 'Submitted' ? 'circle-green' : 'circle-red'"></span>
+          <span class="status-text" [style.color]="item.status === 'Submitted' ? '#10b981' : '#ef4444'">
+            {{item.status}}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pod-modal-overlay" *ngIf="showModal" (click)="closeModal()">
+    <div class="pod-modal-content" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <div>
+          <h2 style="margin:0; color: #0f172a;">Proof of Delivery</h2>
+          <span class="id-tag" style="font-size: 12px;">TRACKING ID: {{selectedPOD?.routeId}}</span>
+        </div>
+        <button class="close-btn" (click)="closeModal()">✕</button>
+      </div>
+
+      <div class="modal-scroll-area">
+        <div class="modal-body-grid">
+          <div class="delivery-info">
+            <h4 class="section-title">Delivery Details</h4>
+            <div class="info-item"><strong>Customer</strong> {{selectedPOD?.customer}}</div>
+            <div class="info-item"><strong>Contact</strong> {{selectedPOD?.contact}}</div>
+            <div class="info-item"><strong>Address</strong> {{selectedPOD?.address}}</div>
+            <div class="info-item"><strong>Timestamp</strong> {{selectedPOD?.timestamp}}</div>
+          </div>
+
+          <div class="delivery-photo">
+  <h4 class="section-title">Delivery Photo</h4>
+  <div class="photo-placeholder">
+    <img src="./image.png" 
+         alt="Delivered Package" 
+         style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+  </div>
+</div>
+
+        <div class="map-section">
+          <h4 class="section-title">GPS Verification</h4>
+          <div class="mini-map">
+            <div class="map-marker">📍</div>
+            <div class="coordinates">COORDINATES: {{selectedPOD?.lat}}, {{selectedPOD?.lng}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

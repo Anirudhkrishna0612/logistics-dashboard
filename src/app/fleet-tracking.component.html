@@ -1,0 +1,52 @@
+<div class="fleet-tracking-container">
+  <header class="tracking-header">
+    <div>
+      <h2 style="margin: 0; font-weight: 800; color: #000000;">Satellite <strong style="color: #3437ec">Telemetry</strong></h2>
+      <span class="sys-time" style="color: #6366f1; font-family: monospace;">[ SYSTEM TIMESTAMP: {{systemTime}} ]</span>
+    </div>
+
+    <div class="search-box">
+      <input type="text" [(ngModel)]="searchQuery" (keyup.enter)="onSearch()" 
+             placeholder="Locate Hub (Ennore, Oragadam...)" class="search-input">
+      <button class="search-btn" (click)="onSearch()">🔍 SCAN</button>
+    </div>
+  </header>
+
+  <div class="dashboard-split">
+    <div class="map-view-base" #mapContainer>
+      <div id="map-viewport"></div>
+
+      <div class="grid-lines"></div>
+      <div class="scanner-overlay"></div>
+      <div class="point-label-box">{{currentMapData.label}}</div>
+      
+      <div class="telemetry-hud">
+        LAT: {{currentMapData.lat.toFixed(4)}}<br>
+        LNG: {{currentMapData.lng.toFixed(4)}}<br>
+        ALT: 450km<br>
+        SATS: 0{{currentMapData.activeSats}}
+      </div>
+    </div>
+
+    <aside class="tactical-panel">
+      <div class="glass-card">
+        <h3 style="font-size: 11px; color: #fbfdff; margin-top: 0;">⚠️ TACTICAL ALERTS</h3>
+        <div *ngFor="let alert of tacticalAlerts">
+          <div class="status-indicator">{{alert.status}}</div>
+          <div class="action-text">› {{alert.action}}</div>
+        </div>
+      </div>
+
+      <div class="glass-card">
+        <h3 style="font-size: 11px; color: #f5f9ff; margin-top: 0;">📊 NEURAL TELEMETRY</h3>
+        <div class="mini-chart-placeholder">
+          <div class="bar" style="height: 40%"></div>
+          <div class="bar" style="height: 75%"></div>
+          <div class="bar" style="height: 60%"></div>
+          <div class="bar" style="height: 90%"></div>
+        </div>
+        <p style="font-size: 10px; color: #d7f1ff; margin-top: 10px; text-align: center;">PATHING EFFICIENCY: 94.2%</p>
+      </div>
+    </aside>
+  </div>
+</div>

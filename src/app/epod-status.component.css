@@ -1,0 +1,197 @@
+/* Container & Global Font Tuning */
+.epod-container { 
+  padding: 40px; 
+  background-color: #f8fafc; /* Professional off-white background */
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+.sync-tag { 
+  font-family: 'JetBrains Mono', monospace; 
+  font-size: 11px; 
+  color: #6366f1; 
+  background: rgba(99, 102, 241, 0.1);
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+/* Dashboard Cards */
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.epod-card {
+  background: #ffffff; /* Clean white card */
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.epod-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Modern Eye Icon Link */
+.view-pod-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1px solid #e2e8f0;
+  color: #6366f1;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.view-pod-link:hover {
+  background: #6366f1;
+  color: white;
+  border-color: #6366f1;
+}
+
+.view-pod-link::before {
+  content: '👁';
+  font-size: 14px;
+}
+
+/* Typography Hierarchy */
+.id-tag {
+  font-family: 'JetBrains Mono', monospace;
+  color: #6366f1;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.info-block { margin-bottom: 16px; }
+
+.label {
+  display: block;
+  color: #94a3b8;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.value { 
+  font-weight: 500; 
+  font-size: 14px; 
+  color: #1e293b;
+}
+
+.truncate { 
+  display: block;
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+}
+
+/* Status Indicators */
+.submission-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 12px;
+}
+
+.status-circle { width: 8px; height: 8px; border-radius: 50%; }
+.circle-green { background: #10b981; box-shadow: 0 0 8px rgba(16, 185, 129, 0.3); }
+.circle-red { background: #ef4444; box-shadow: 0 0 8px rgba(239, 68, 68, 0.3); }
+.status-text { font-size: 12px; font-weight: 700; text-transform: uppercase; }
+
+/* MODAL OVERLAY - FIXED SIZING */
+.pod-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(15, 23, 42, 0.7); /* Darker overlay for focus */
+  backdrop-filter: blur(4px);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.pod-modal-content {
+  background: #ffffff;
+  width: 100%; 
+  max-width: 800px;
+  max-height: 90vh; /* Prevents cutting off vertically */
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  overflow: hidden; /* Contains the scroll area */
+}
+
+.modal-header {
+  padding: 24px 32px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* Scroll Area for Content */
+.modal-scroll-area {
+  padding: 32px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.modal-body-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+}
+
+.section-title {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #94a3b8;
+  letter-spacing: 0.5px;
+}
+
+.info-item strong {
+  display: block;
+  font-size: 11px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  margin-top: 12px;
+}
+
+.photo-placeholder {
+  width: 100%; height: 220px;
+  background: #f1f5f9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+/* Mini Map Section */
+.mini-map {
+  margin-top: 12px;
+  height: 140px; background: #f8fafc; border-radius: 12px;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  border: 1px solid #e2e8f0;
+}
+
+.map-marker { font-size: 30px; animation: bounce 2s infinite; }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+.coordinates { font-family: monospace; font-size: 11px; margin-top: 10px; color: #64748b; }
+
+.close-btn { 
+  background: #f1f5f9; border: none; border-radius: 50%; width: 36px; height: 36px; 
+  cursor: pointer; font-size: 18px; color: #64748b; transition: 0.2s;
+}
+
+.close-btn:hover { background: #fee2e2; color: #ef4444; }
