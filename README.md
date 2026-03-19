@@ -1,59 +1,76 @@
-# LogisticsDashboard
+# 🚚 LogisticsAI Hub
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.2.
+An AI-powered Supply Chain Intelligence Platform designed to reduce logistics inefficiencies and improve financial fluidity in India’s transport ecosystem.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 The Problem
 
-```bash
-ng serve
-```
+Logistics contributes nearly **8% to India’s GDP (~$300B / ₹24 lakh crore)**, yet a major inefficiency still exists.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Manual **Proof of Delivery (POD)** systems delay payments by **15–45 days**, locking working capital and creating a **visibility gap** across stakeholders.
 
-## Code scaffolding
+Even existing digital solutions are restricted to large enterprises, leaving **third-party logistics operators without access to real-time insights**.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## 💡 The Solution
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+**LogisticsAI Hub** transforms logistics operations through:
 
-```bash
-ng generate --help
-```
+- 📍 **ePOD System**  
+  Geo-tagged delivery proof with time, location, and image capture
 
-## Building
+- 🧠 **AI-Powered Risk Analysis**  
+  Predicts delays, risk levels, and operational issues using backend models
 
-To build the project run:
+- 🚦 **Smart Rerouting Insights**  
+  Uses traffic and environmental data to reduce last-mile delays
 
-```bash
-ng build
-```
+- 🔄 **Unified Dashboard**  
+  Shared visibility for drivers, managers, customers, and logistics partners
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 🧠 Tech Stack
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- **Frontend:** Angular  
+- **Backend:** Python (AI/ML models)  
+- **Data Handling:** APIs, real-time updates  
 
-```bash
-ng test
-```
+---
 
-## Running end-to-end tests
+## ⚙️ My Contribution
 
-For end-to-end (e2e) testing, run:
+- Developed the **Angular-based frontend dashboard**
+- Integrated AI backend outputs into a **real-time Command Center UI**
+- Designed a system to convert complex model predictions into **clear, actionable insights**
+- Focused on usability, data visualization, and real-time interaction
 
-```bash
-ng e2e
-```
+---
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 📊 Impact
 
-## Additional Resources
+By addressing inefficiencies in POD systems:
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Even a **10% improvement** can unlock  
+  👉 **~$3 Billion (₹24,000+ crore)** in financial liquidity
+
+This project shifts focus from:
+> **“Where is the shipment?” → “Where is the money?”**
+
+---
+
+## 🖼️ Demo
+
+(Add screenshots here)
+
+- Dashboard Overview  
+- Risk Alerts Panel  
+- ePOD Verification Interface  
+
+---
+
+## ▶️ How to Run
+
+1. Clone the repository
