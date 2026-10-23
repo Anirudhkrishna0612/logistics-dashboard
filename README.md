@@ -63,8 +63,6 @@ This project shifts focus from:
 
 ## 🖼️ Demo
 
-(Add screenshots here)
-
 - Dashboard Overview  
 - Risk Alerts Panel  
 - ePOD Verification Interface  
